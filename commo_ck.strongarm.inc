@@ -62,6 +62,20 @@ function commo_ck_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_commo_ck_page';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_commo_ck_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_commo_ck_page';
+  $strongarm->value = array();
+  $export['i18n_node_options_commo_ck_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'i18n_sync_node_type_commo_ck_page';
   $strongarm->value = array();
   $export['i18n_sync_node_type_commo_ck_page'] = $strongarm;
@@ -78,7 +92,7 @@ function commo_ck_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_commo_ck_page';
   $strongarm->value = array(
-    0 => 'menu-commo_ck',
+    0 => 'main-menu',
   );
   $export['menu_options_commo_ck_page'] = $strongarm;
 
@@ -86,7 +100,7 @@ function commo_ck_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_commo_ck_page';
-  $strongarm->value = 'menu-commo_ck:0';
+  $strongarm->value = 'main-menu:2052';
   $export['menu_parent_commo_ck_page'] = $strongarm;
 
   $strongarm = new stdClass();
