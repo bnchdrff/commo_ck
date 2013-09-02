@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the commo_ck feature.
+ */
+
+include_once 'commo_ck.features.inc';
