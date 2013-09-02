@@ -5,3 +5,42 @@
  */
 
 include_once 'commo_ck.features.inc';
+
+/**
+ * Implements hook_menu_block_tree_alter().
+ *
+ * Only show active tree parents for the commo_ck menu items.
+ * ref. https://drupal.org/node/406568#comment-6496988
+ *
+ * fixme: menu tree keys are hard coded.
+ */
+function commo_ck_menu_block_tree_alter(&$tree, &$config) {
+  if ($config['admin_title'] == 'commo ck module menu') {
+    $ck_tree = &$tree['49957 Get Help 2089']['below']['49954 Commotion Construction Kit 2052']['below'];
+    foreach ($ck_tree as $key => $menu_data) {
+      if ($menu_data['link']['in_active_trail'] === FALSE) {
+        unset($ck_tree[$key]);
+      }
+      else {
+        $level_2 = $ck_tree[$key]['below'];
+        $hasActiveChildren = false;
+        foreach ($level_2 as $menu_item_key => $menu_item) {
+          $link = $menu_item['link'];
+          if (isset($link['in_active_trail']) && $link['in_active_trail']) {
+            $hasActiveChildren = true;
+          }
+        }
+        foreach ($level_2 as $menu_item_key => $menu_item) {
+          $link = $menu_item['link'];
+          if (!isset($link['in_active_trail']) || ! $link['in_active_trail']) {
+            // get rid of children since they are not in the active trail
+            if ($hasActiveChildren) {
+              unset($ck_tree[$key]['below'][$menu_item_key]);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
