@@ -9,6 +9,14 @@
  */
 function commo_ck_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
+  list($module, $api) = func_get_args();
+  if ($module == "menu_block" && $api == "menu_block") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }

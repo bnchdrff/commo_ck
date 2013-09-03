@@ -10,11 +10,11 @@
 function commo_ck_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu:<nolink>
-  $menu_links['main-menu:<nolink>'] = array(
+  // Exported menu link: main-menu:<nolink>/commo_ck_planning
+  $menu_links['main-menu:<nolink>/commo_ck_planning'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<nolink>',
-    'router_path' => '<nolink>',
+    'link_path' => '<nolink>/commo_ck_planning',
+    'router_path' => '<nolink>/%',
     'link_title' => 'Planning',
     'options' => array(
       'attributes' => array(
@@ -26,7 +26,7 @@ function commo_ck_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-50',
+    'weight' => '0',
     'parent_path' => 'node/3459',
   );
   // Exported menu link: main-menu:node/3459
