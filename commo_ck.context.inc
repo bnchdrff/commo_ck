@@ -35,6 +35,12 @@ function commo_ck_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
+        'menu_block-5' => array(
+          'module' => 'menu_block',
+          'delta' => '5',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
       ),
     ),
   );

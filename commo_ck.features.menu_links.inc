@@ -10,25 +10,6 @@
 function commo_ck_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu:<nolink>/commo_ck_planning
-  $menu_links['main-menu:<nolink>/commo_ck_planning'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<nolink>/commo_ck_planning',
-    'router_path' => '<nolink>/%',
-    'link_title' => 'Planning',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '0',
-    'parent_path' => 'node/3459',
-  );
   // Exported menu link: main-menu:node/3459
   $menu_links['main-menu:node/3459'] = array(
     'menu_name' => 'main-menu',
@@ -51,7 +32,6 @@ function commo_ck_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Commotion Construction Kit');
-  t('Planning');
 
 
   return $menu_links;
