@@ -15,8 +15,11 @@ include_once 'commo_ck.features.inc';
  * fixme: menu tree keys are hard coded.
  */
 function commo_ck_menu_block_tree_alter(&$tree, &$config) {
-  if ($config['admin_title'] == 'commo ck module menu') {
-    $ck_tree = &$tree['49957 Get Help 2089']['below']['49954 Commotion Construction Kit 2052']['below'];
+  if ($config['label'] == 'commo ck module menu') {
+    $get_help_key = _find_key_match('Get Help', $tree);
+    $commo_ck_key = _find_key_match('Commotion Construction Kit', $tree[$get_help_key]['below']);
+    if (!$commo_ck_key) { return; }
+    $ck_tree = &$tree[$get_help_key]['below'][$commo_ck_key]['below'];
     foreach ($ck_tree as $key => $menu_data) {
       if ($menu_data['link']['in_active_trail'] === FALSE) {
         unset($ck_tree[$key]);
@@ -41,6 +44,28 @@ function commo_ck_menu_block_tree_alter(&$tree, &$config) {
         }
       }
     }
+  }
+}
+
+/**
+ * Find the key name that matches text string
+ *
+ * @param $search
+ * @param $array
+ *
+ * @return
+ *   string array key if one match
+ *   FALSE if no or multiple matches
+ */
+function _find_key_match($search, $array) {
+  $matches = array_filter(array_keys($array), function($el) use ($search) {
+    return ( strpos($el, $search) !== false );
+  });
+  if (count($matches) === 1) {
+    return array_pop($matches);
+  }
+  else {
+    return FALSE;
   }
 }
 
