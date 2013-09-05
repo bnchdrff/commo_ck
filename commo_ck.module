@@ -33,15 +33,6 @@ function commo_ck_menu_block_tree_alter(&$tree, &$config) {
             $hasActiveChildren = true;
           }
         }
-        foreach ($level_2 as $menu_item_key => $menu_item) {
-          $link = $menu_item['link'];
-          if (!isset($link['in_active_trail']) || ! $link['in_active_trail']) {
-            // get rid of children since they are not in the active trail
-            if ($hasActiveChildren) {
-              unset($ck_tree[$key]['below'][$menu_item_key]);
-            }
-          }
-        }
       }
     }
   }
