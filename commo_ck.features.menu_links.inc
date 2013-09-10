@@ -20,6 +20,7 @@ function commo_ck_menu_default_menu_links() {
       'attributes' => array(
         'title' => 'The Commotion Construction Kit is a guide to organizing and contructing a community wireless mesh network using Commotion.',
       ),
+      'node_type' => 'page',
     ),
     'module' => 'menu',
     'hidden' => '0',

@@ -41,6 +41,12 @@ function commo_ck_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
+        'views-commo_ck_tags-block' => array(
+          'module' => 'views',
+          'delta' => 'commo_ck_tags-block',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
       ),
     ),
   );

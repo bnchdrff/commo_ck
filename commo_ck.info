@@ -19,6 +19,7 @@ features[ctools][] = menu_block:menu_block:1
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:1
 features[field][] = node-commo_ck_page-body
+features[field][] = node-commo_ck_page-field_commo_ck_feedback
 features[field][] = node-commo_ck_page-field_commo_ck_pdf
 features[field][] = node-commo_ck_page-field_commo_ck_tags
 features[menu_blocks][] = 11

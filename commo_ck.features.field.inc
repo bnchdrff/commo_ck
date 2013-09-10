@@ -50,7 +50,7 @@ function commo_ck_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -79,6 +79,75 @@ function commo_ck_field_default_fields() {
         ),
         'type' => 'text_textarea_with_summary',
         'weight' => '31',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-commo_ck_page-field_commo_ck_feedback'.
+  $fields['node-commo_ck_page-field_commo_ck_feedback'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_commo_ck_feedback',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'commo_ck_page',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Enter an absolute path or URL to be used in the link tag surrounding the "Send us feedback" sidebar graphic.',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_plain',
+          'weight' => '3',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_commo_ck_feedback',
+      'label' => 'Send us feedback',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '34',
       ),
     ),
   );
@@ -120,11 +189,11 @@ function commo_ck_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'file',
           'settings' => array(),
-          'type' => 'file_default',
-          'weight' => 2,
+          'type' => 'file_url_plain',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -202,7 +271,7 @@ function commo_ck_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -213,7 +282,7 @@ function commo_ck_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_commo_ck_tags',
-      'label' => 'Tags',
+      'label' => 'Tags used in this module',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -234,8 +303,10 @@ function commo_ck_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Enter an absolute path or URL to be used in the link tag surrounding the "Send us feedback" sidebar graphic.');
   t('PDF');
-  t('Tags');
+  t('Send us feedback');
+  t('Tags used in this module');
 
   return $fields;
 }
